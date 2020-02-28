@@ -27,3 +27,6 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
 	find . -name '.pytest_cache' -exec rm -fr {} +
+
+build:
+	docker build -t metrics-script .

@@ -13,21 +13,23 @@ args = parser.parse_args()
 if args.type == 'cpu':
 
     cpu_result = psutil.cpu_times_percent()
+    print(cpu_result)
 
     print(f'system.cpu.idle {cpu_result.idle}')
     print(f'system.cpu.user {cpu_result.user}')
-    print(f'system.cpu.guest ')   # TODO
-    print(f'system.cpu.iowait ')  # TODO
-    print(f'system.cpu.stolen ')  # TODO
+    print(f'system.cpu.guest {cpu_result.guest}')
+    print(f'system.cpu.iowait {cpu_result.iowait}')
+    print(f'system.cpu.stolen {cpu_result.steal}')
     print(f'system.cpu.system {cpu_result.system}')
 
 elif args.type == 'mem':
     mem_result = psutil.virtual_memory()
+    print(mem_result)
 
     print(f'virtual total {mem_result.total}')
     print(f'virtual used {mem_result.used}')
     print(f'virtual free {mem_result.free}')
-    print(f'virtual shared ') # TODO
+    print(f'virtual shared {mem_result.shared}')
 
     swap_result = psutil.swap_memory()
 
