@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # metrics.py
 
 import psutil
@@ -13,7 +14,6 @@ args = parser.parse_args()
 if args.type == 'cpu':
 
     cpu_result = psutil.cpu_times_percent()
-    print(cpu_result)
 
     print(f'system.cpu.idle {cpu_result.idle}')
     print(f'system.cpu.user {cpu_result.user}')
@@ -24,15 +24,12 @@ if args.type == 'cpu':
 
 elif args.type == 'mem':
     mem_result = psutil.virtual_memory()
-    print(mem_result)
+    swap_result = psutil.swap_memory()
 
     print(f'virtual total {mem_result.total}')
     print(f'virtual used {mem_result.used}')
     print(f'virtual free {mem_result.free}')
     print(f'virtual shared {mem_result.shared}')
-
-    swap_result = psutil.swap_memory()
-
     print(f'swap total {swap_result.total}')
     print(f'swap used {swap_result.used}')
     print(f'swap free {swap_result.free}')

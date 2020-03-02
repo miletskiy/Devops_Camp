@@ -10,5 +10,4 @@ WORKDIR /script
 
 RUN pip install -r requirements.txt
 
-# CMD python /script/metrics.py
 ENTRYPOINT ["python", "/script/metrics.py"]
