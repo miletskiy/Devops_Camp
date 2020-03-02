@@ -32,7 +32,7 @@ build:
 	docker build . -t metric:latest
 
 cpu:
-	docker run --rm metric:latest cpu
+	docker run --rm miletskiy/devops_camp:metric cpu
 
 mem:
-	docker run --rm metric:latest mem
+	docker run --rm miletskiy/devops_camp:metric mem
